@@ -19,8 +19,8 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(textnode_to_htmlnode(node).to_html(),ans)
 
     def test_eq3(self):
-        node = TextNode("click for mysite","link","boot.dev")
-        ans = '<a href="boot.dev">click for mysite</a>'
+        node = TextNode("this is my image","image","img.com")
+        ans = '<img src="img.com" alt="this is my image"></img>'
         
         self.assertEqual(textnode_to_htmlnode(node).to_html(),ans)
 

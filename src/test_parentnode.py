@@ -15,7 +15,6 @@ class TestParentNode(unittest.TestCase):
         )
 
         nodeHtml = "<p><b>Bold text</b>Normal text<i>italic text</i>Normal text</p>"
-        print(node.to_html())
 
         self.assertEqual(node.to_html(),nodeHtml)
 
@@ -57,7 +56,6 @@ class TestParentNode(unittest.TestCase):
         )
 
         nodeHtml = f'<p><b>Bold text</b>Normal text<i>italic text</i>Normal text{node2.to_html()}</p>'
-        print(node.to_html())
 
         self.assertEqual(node.to_html(), nodeHtml)
 

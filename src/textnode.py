@@ -25,7 +25,7 @@ class TextNode:
     def __repr__(self) -> str:
         return f"TextNode({self.text}, {self.text_type}, {self.url})"
 
-def textnode_to_htmlnode(text_node : TextNode):
+def textnode_to_htmlnode(text_node : TextNode) -> LeafNode | None:
     if text_node.text_type not in [ "text", "bold", "italic", "code", "link", "image" ]:
         raise ValueError("Invalid Value for text_type")
     if text_node.text_type == "text":
