@@ -21,3 +21,11 @@ def split_nodes_delimiter(old_nodes,delimiter,text_type):
                  returnTextNodeObjs.extend([TextNode(_nodes[i].replace(delimiter,""),"text" if delimiter not in _nodes[i] else text_type)])
 
     return returnTextNodeObjs
+
+
+def extract_markdown_images(text):
+    matches = re.findall(r"!\[(.*?)\]\((.*?)\)",text)
+    return matches
+def extract_markdown_links(text):
+    matches = re.findall(r"\[(.*?)\]\((.*?)\)",text)
+    return matches

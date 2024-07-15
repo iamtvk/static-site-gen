@@ -4,6 +4,16 @@ from textnode import *
 
 class TestSplitNodesDelimit(unittest.TestCase):
 
+    def test_extract_markdown_links(self):
+        text = "This is text with a ![rick roll](https://i.imgur.com/aKaOqIh.gif) and ![obi wan](https://i.imgur.com/fJRm4Vk.jpeg)"
+        text2 = "This is text with a link [to boot dev](https://www.boot.dev) and [to youtube](https://www.youtube.com/@bootdotdev)"
+
+        self.assertListEqual(extract_markdown_images(text),[("rick roll", "https://i.imgur.com/aKaOqIh.gif"), 
+                                                            ("obi wan", "https://i.imgur.com/fJRm4Vk.jpeg")])
+        self.assertListEqual(extract_markdown_links(text2),[("to boot dev", "https://www.boot.dev"), 
+                                                            ("to youtube", "https://www.youtube.com/@bootdotdev")])
+
+
     def test_delim_bold(self):
         node = TextNode("This is text with a **bolded** word", text_type_text)
         new_nodes = split_nodes_delimiter([node], "**", text_type_bold)
@@ -82,6 +92,7 @@ class TestSplitNodesDelimit(unittest.TestCase):
             ],
             new_nodes,
         )
+
 
 
 if __name__ == "__main__":
