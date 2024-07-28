@@ -77,7 +77,7 @@ def main():
 
     filesCopy("static","public")
 
-    print(f"{GREEN}*** Successfully generated html pages , Run python server at ./public dir to see ***{RESET}")
+    print(f"{GREEN}*** Successfully generated html pages , You can access the web page at {YELLOW}http://localhost:8888{RESET}{GREEN} ***{RESET}")
 
     return 
 
