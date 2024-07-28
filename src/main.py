@@ -1,5 +1,6 @@
 import os
 from os.path import exists, isdir
+from posix import replace
 from txt_to_md import *
 from file_manage import filesCopy
 
@@ -36,8 +37,8 @@ def generate_pages(from_path , template_path, dest_path):
     if os.path.isdir(from_path):
         dir_list = os.listdir(from_path)
         for item in dir_list:
-                from_item = f"{from_path}/{item}"
-                dest_item = f"{dest_path}/{item}"
+                from_item = os.path.join(from_path,item)
+                dest_item = os.path.join(dest_path,item.replace(".md",".html")) # changed the file extention to .html if .md exists
                 generate_pages(from_path=from_item,template_path=template_path, dest_path= dest_item)
     else:
         f = open(from_path) #opened content file

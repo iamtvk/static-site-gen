@@ -11,14 +11,14 @@ detect its presence.
 other in the purposed domination of the author."
 
 In the annals of fantasy literature and the broader realm of creative world-building, few sagas can rival the intricate
-tapestry woven by J.R.R. Tolkien in *The Lord of the Rings*. You can find the [wiki
-here](https://lotr.fandom.com/wiki/Main_Page).
+tapestry woven by J.R.R. Tolkien in *The Lord of the Rings*.You can find the [wikihere](https://lotr.fandom.com/wiki/Main_Page) .
 
 ## Introduction
 
 This series, a cornerstone of what I, in my many years as an **Archmage**, have come to recognize as the pinnacle of
 imaginative creation, stands unrivaled in its depth, complexity, and the sheer scope of its *legendarium*. As we embark
 on this exploration, let us delve into the reasons why this monumental work is celebrated as the finest in the world.
+also look at the [bookdotdev](https://boot.dev) .
 
 ## A Rich Tapestry of Lore
 
