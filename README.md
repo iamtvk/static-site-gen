@@ -18,7 +18,8 @@
  8. If all goes well, you will see a message similar to this :
 
     
-    ![image](https://github.com/user-attachments/assets/7d514030-784e-4bec-b7fd-80fe880958e6)
+    ![image](https://github.com/user-attachments/assets/e489df20-9b6d-4f17-aad6-0088552f202e)
+
 
 
 
