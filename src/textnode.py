@@ -50,3 +50,4 @@ def textnode_to_htmlnode(text_node : TextNode) -> LeafNode | None:
         text_type_image = LeafNode("img","",{"src" : text_node.url, "alt" : text_node.text})
         return text_type_image
 
+    raise ValueError(f"Invalid text type: {text_node.text_type}")

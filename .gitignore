@@ -1,3 +1,4 @@
 # Ignore specific files
 shell.nix
 __pycache__/
+public/
