@@ -1,5 +1,5 @@
 import os
-from os.path import isdir
+from os.path import exists, isdir
 from txt_to_md import *
 from file_manage import filesCopy
 
@@ -39,32 +39,33 @@ def generate_pages(from_path , template_path, dest_path):
                 from_item = f"{from_path}/{item}"
                 dest_item = f"{dest_path}/{item}"
                 generate_pages(from_path=from_item,template_path=template_path, dest_path= dest_item)
-    f = open(from_path) #opened content file
-    mdcontent = f.read()
-    f.close()           #closed content file
-    html_content = md_to_html_node(mdcontent)
-    
-    f = open(template_path) #opened template
-    template_content = f.read()
-    f.close() #closed template
+    else:
+        f = open(from_path) #opened content file
+        mdcontent = f.read()
+        f.close()           #closed content file
+        html_content = md_to_html_node(mdcontent)
+        
+        f = open(template_path) #opened template
+        template_content = f.read()
+        f.close() #closed template
 
-    content_title = extract_title(from_path)
-    try :
-        template_content = template_content.replace("{{ Title }}",content_title)
-        html_content = template_content.replace("{{ Content }}",html_content)
-        pass
-    except Exception :
-        print("*** Invalid Template ***")
-        exit()
+        content_title = extract_title(from_path)
+        try :
+            template_content = template_content.replace("{{ Title }}",content_title)
+            html_content = template_content.replace("{{ Content }}",html_content)
+            pass
+        except Exception :
+            print("*** Invalid Template ***")
+            exit()
 
-    if not os.path.exists(dest_path):
-        dirs = os.path.dirname(dest_path)
-        os.makedirs(dirs)
+        if not os.path.exists(dest_path):
+            dirs = os.path.dirname(dest_path)
+            os.makedirs(dirs,exist_ok=True)
 
-    html_file = open(f"{dest_path}/index.html", mode='w' ) # opened/created destination file
-    html_file.write(html_content)
+        html_file = open(dest_path, mode='w' ) # opened/created destination file
+        html_file.write(html_content)
 
-    html_file.close()
+        html_file.close()
 
     return 
 
